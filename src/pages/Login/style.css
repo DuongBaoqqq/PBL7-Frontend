@@ -1,0 +1,84 @@
+.border-color{
+    border-color: #5165C5;
+}
+.bg{
+    background-color: #5165C5;
+}
+.color{
+    color: #5165C5;
+}
+.btn{
+    cursor: pointer;
+}
+.direction-column{
+    flex-direction: column;
+}
+.align-start{
+    align-items: start;
+}
+.h-100{
+    height: 80%;
+}
+.pb-4{
+    padding-bottom: 4px;
+}
+.ml-110{
+    margin-left: 110px;
+}
+.mx-20{
+    margin: 20px 0px;
+}
+.rounder-6{
+    border-radius: 6px;
+}
+/* .bold{
+    style: bold;
+} */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 33px;
+    grid-row-gap: 0px;
+}
+
+.flex{
+    display: flex;
+}
+.justify-center{
+    justify-content: center;
+}
+.justify-between{
+    justify-content: space-between;
+}
+.border-b{
+    border-bottom: solid 2px #5165C5;
+}
+.outline-none{
+    outline: none;
+}
+
+.border-none{
+    border: none;
+}
+.w-100{
+    width: 100%;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.flex-grow {
+    flex-grow: 1; /* Thẻ input sẽ mở rộng và chiếm không gian trống còn lại */
+  }
+.icon{
+    background-color: #ffffff00;
+    border: none;
+    cursor: pointer;
+}
+
+.color-icon{
+    color: #5165C5;
+
+}
