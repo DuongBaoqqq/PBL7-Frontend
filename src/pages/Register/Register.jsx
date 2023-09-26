@@ -39,14 +39,15 @@ function Register() {
 
   return (
     <>
-      <div className="row vh-100">
+      <div className="row ">
         <div className="col-4">
-          <Logo />
         </div>
-        <div className="flex justify-center responsive-div col-4 my-5 card shadow">
-          <form action="" className="w-100 mt-5">
+        <div className="flex justify-center responsive-div col-4 mt-5 pb-4 card shadow">
+          <form action="" className="w-100">
+            <Logo />
+
             <div className="flex justify-center">
-              <h1 className="color">REGISTER</h1>
+              <h1 className="color mt-5">REGISTER</h1>
             </div>
             <div className="flex mx-20 direction-column align-start border-1 rounder-6 px-3">
               <label htmlFor="email " className="text-color text-size">

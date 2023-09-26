@@ -8,14 +8,16 @@ import Register from './pages/Register/Register';
 import RegisterPage2 from './pages/Register/RegisterPage2';
 import RegisterPage3 from './pages/Register/RegisterPage3';
 import InforVehical from './pages/Register/InforVehical';
+import Home from './pages/Home/Home';
 
 function App() {
   return (
     <div className="">
 
-      <div className="container bg-img">
+      <div className="bg-img container-fluid vh-100">
 
         <Routes>
+          <Route path="/home" element={<Home />}></Route>
           <Route path='/' element={<Login />} ></Route>
           <Route path='/register' element={<Register />}></Route>
           <Route path='/register2' element={<RegisterPage2 />}></Route>
