@@ -5,7 +5,6 @@ import Feedback from './FormFeedback';
 import style from './Contacts.module.css';
 const Contacts = () => {
     const [isFeedback, setIsFeedback]= useState(false);
-    
     const handleClickFeedback = () => {
         setIsFeedback(!isFeedback);
     }
