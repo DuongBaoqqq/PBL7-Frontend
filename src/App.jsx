@@ -13,6 +13,7 @@ import InforVehical from './pages/Register/InforVehical';
 import Home from './pages/Home/Home';
 import Contacts from './pages/Contacts/Contacts';
 import Terms from './pages/Terms/Terms';
+import About from './pages/About/About';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path='/contacts' element={ <Contacts/>}></Route>
           /** Terms*/
           <Route path='/terms' element={ <Terms/>}></Route>
+          <Route path='/about' element={ <About/>}></Route>
         </Routes>
       </div>
     </div>
