@@ -11,6 +11,7 @@ function Login() {
     const [password, setPassword] = useState('');
     const [isEmail, setIsEmail] = useState(true);
     const [isPassword, setIsPassword] = useState(true);
+    const [isShowPassword, setIsShowPassword] = useState(false);
     const emailRegex = /^[a-zA-Z0-9._-]+@gmail\.com$/;
 
     function handleChangeEmail(event) {
@@ -60,6 +61,11 @@ function Login() {
         }
         // console.log(res.data);
     }
+
+    const handleShowHidePassword = () =>{
+        setIsShowPassword(!isShowPassword);
+    }
+
     return (
         <>
             <div className=' '>
@@ -74,37 +80,24 @@ function Login() {
                     <div className = "col-3"></div>
                     <div className='flex justify-center bg-white container-sm card vh-50 my-5 shadow col-6'>
                         <form action="" className='my-5'>
-                            <div className=''>
-                            <h1 className='color' >Welcome back, yash</h1>
+                            <div className='mb-4'>
+                                <h1 className='color' >Welcome back, yash</h1>
                                 <h3 className='color'>Welcome back. Please enter your details.</h3>
                             </div>
-                            <div className='border-b flex justify-center pb-4 mx-20'>
-                                <label htmlFor="email "
-                                >Email</label>
-                                <input type="email"
-                                    onChange={handleChangeEmail}
-                                    id='email'
-                                    className='outline-none border-none flex-grow'/>
+                            <div className="mb-3">
+                                <label for="email" className="form-label">Email</label>
+                                <input type="email" className="form-control" id="email" aria-describedby="emailHelp" onChange={handleChangeEmail}/>
+                                {checkEmail()}
                             </div>
-                            {checkEmail()}
-                            <div className='border-b flex justify-center pb-4'>
-                                <label htmlFor="password">Password</label>
-                                <input type="password"
-                                    id='password'
-                                    onChange={handleChangePassword}
-                                    className=' 
-                                    flex-grow
-                                    outline-none border-none' />
-                                <button type="button"
-                                className='icon'
-                                >
-                                    <AiFillEyeInvisible
-                                    className='color-icon'
-                                    />
-                                </button>
+                            <div className="mb-3">
+                                <label for="password" className="form-label">Password</label>
+                                <div className="input-group mb-3">
+                                    <input type={isShowPassword?"text":"password"} className="form-control"  id="password"  onChange={handleChangePassword}/>
+                                    <span className="input-group-text" id="basic-addon2" onClick={handleShowHidePassword}><AiFillEyeInvisible className='color-icon'/></span>
+                                    {checkPassword()}
+                                </div>
                             </div>
-                            {checkPassword()}
-    
+                            
                             <div className='flex justify-between mx-20'>
                                 <div className='flex'>
                                     <input type="checkbox" name="check" id="check" />
@@ -112,14 +105,12 @@ function Login() {
                                 </div>
                                 <a href="/">Forgot Password</a>
                             </div>
-                            <button type="submit"
-                                onClick={handleOnSubmit}
-                            className='w-100 bg border-none btn btn-primary rounder-6 mx-20'
-                            ><p><b>Login</b></p> </button>
+                            <div className='mb-3'>
+                                <button type="submit" className="bg btn btn-primary col-12 py-2" onClick={handleOnSubmit}>Login</button>
+                            </div>
                             <div className='flex justify-center'>
                                 <p>Don't have an account?<Link to="/register"> Sign up for free</Link></p>
                             </div>
-                            
                         </form>
                     </div>
                     <div className="col-3"></div>
