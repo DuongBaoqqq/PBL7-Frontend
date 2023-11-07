@@ -12,13 +12,13 @@ import RegisterPage3 from './pages/Register/RegisterPage3';
 import InforVehical from './pages/Register/InforVehical';
 import Home from './pages/Home/Home';
 import Contacts from './pages/Contacts/Contacts';
+import Terms from './pages/Terms/Terms';
 
 function App() {
   return (
     <div className="">
 
       <div className="bg-img container-fluid vh-100">
-
         <Routes>
           <Route path="/home" element={<Home />}></Route>
           <Route path='/' element={<Login />} ></Route>
@@ -26,8 +26,10 @@ function App() {
           <Route path='/register2' element={<RegisterPage2 />}></Route>
           <Route path='/register3' element={<RegisterPage3 />}></Route>
           <Route path='/inforvehical' element={<InforVehical />}></Route>
-          /** contacts */
+          /** Contacts */
           <Route path='/contacts' element={ <Contacts/>}></Route>
+          /** Terms*/
+          <Route path='/terms' element={ <Terms/>}></Route>
         </Routes>
       </div>
     </div>
