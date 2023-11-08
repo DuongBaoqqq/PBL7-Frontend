@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import './style.css'
 import { AiFillEyeInvisible } from 'react-icons/ai';
 import { useState } from 'react';
@@ -55,7 +55,7 @@ function Register() {
     const handlePhoneInput = (value) =>{
         setFormRegister(prevForm => ({
             ...prevForm,
-            ['phNo']: value
+            'phNo': value
         }));
     }
 
@@ -65,7 +65,7 @@ function Register() {
                 <>
                     <div className={`d-flex justify-content-center position-relative`}>
                         <div className={`position-absolute h-3  z-3 py-5`}>
-                            <img className={`h-100`}  src='./ok.svg'/>
+                            <img className={`h-100`}  alt="create success" src='./ok.svg'/>
                         </div>
                     </div>
                 </>
@@ -117,29 +117,29 @@ function Register() {
         if ( formRegister.name === null || formRegister.name === undefined || formRegister.name.length === 0) {
             setIsName(prev => ({
                 ...prev,
-                ['isTrue']: false,
-                ['message']: `Please fill out this field`
+                'isTrue': false,
+                'message': `Please fill out this field`
             }))
             condition=false;
         }
         else {
             setIsName(prev => ({
                 ...prev,
-                ['isTrue']: true
+                'isTrue': true
             }));
         }
         
         if (emailPattern.test(formRegister.email)) {
             setIsEmail(prev => ({
                 ...prev,
-                ['isTrue']: true
+                'isTrue': true
             }));
         }
         else {
             setIsEmail(prev => ({
                 ...prev,
-                ['isTrue']: false,
-                ['message']: 'Invalid email addres'
+                'isTrue': false,
+                'message': 'Invalid email addres'
             }))
             condition=false;
         }
@@ -147,14 +147,14 @@ function Register() {
         if (passwordPattern.test(formRegister.password)) {
             setIsPassword(prev => ({
                 ...prev,
-                ['isTrue']: true
+                'isTrue': true
             }));
         }
         else {
             setIsPassword(prev => ({
                 ...prev,
-                ['isTrue']: false,
-                ['message']: `Weak password`
+                'isTrue': false,
+                'message': `Weak password`
             }))
             condition=false;
         }
@@ -180,15 +180,15 @@ function Register() {
                 if(res.data.error.details[0].context.key==='email'){
                     setIsEmail(prev => ({
                         ...prev,
-                        ['isTrue']: false,
-                        ['message']: res.data.message
+                        'isTrue': false,
+                        'message': res.data.message
                     }))
                 }
                 if(res.data.error.details[0].context.key==='phNo'){
                     setIsPhNo(prev => ({
                         ...prev,
-                        ['isTrue']: false,
-                        ['message']: res.data.message
+                        'isTrue': false,
+                        'message': res.data.message
                     }))
                 }
             }
