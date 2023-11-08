@@ -18,6 +18,8 @@ function Register() {
         "password":''
     });
 
+    const [isCreate,setIsCreate] = useState(false);
+
     const [isEmail, setIsEmail] = useState({
         'isTrue':true,
         'message':''
@@ -57,6 +59,20 @@ function Register() {
         }));
     }
 
+    const CreateSuccess = () =>{
+        if(isCreate){
+            return(
+                <>
+                    <div className={`d-flex justify-content-center position-relative`}>
+                        <div className={`position-absolute h-3  z-3 py-5`}>
+                            <img className={`h-100`}  src='./ok.svg'/>
+                        </div>
+                    </div>
+                </>
+            )
+        }
+        return(<></>)
+    }
    
     const checkEmail = () =>{
         if (!isEmail.isTrue) {
@@ -154,7 +170,10 @@ function Register() {
         if (res.status === 200) {
             console.log('Create success');
             console.log(res);
-            navigate("/");
+            setIsCreate(true);
+            setTimeout(() => {
+                navigate('/'); // Chuyển đến '/home' sau 20 giây
+            }, 1000); // 20000 ms = 20 giây
         }
         else {
             if(res.data.error.details){
@@ -183,6 +202,7 @@ function Register() {
 
     return (
         <>
+            {CreateSuccess()}
             <div className=' '>
                 <div className='flex align-start direction-column'>
                     <div className='flex'>
@@ -196,7 +216,7 @@ function Register() {
                     <div className='flex justify-center bg-white container-sm card vh-50 my-5 shadow col-6'>
                         <form action="" className='my-5'>
                             <div className='mb-4'>
-                                <h1 className='color' align='center'>Register</h1>
+                                <h1 className='color' align='center'>Sign in</h1>
                             </div>
                             <div>
                               
