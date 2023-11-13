@@ -14,6 +14,7 @@ import Home from './pages/Home/Home';
 import Contacts from './pages/Contacts/Contacts';
 import Terms from './pages/Terms/Terms';
 import About from './pages/About/About';
+import Privacy from './pages/Privacy/Privacy';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           /** Terms*/
           <Route path='/terms' element={ <Terms/>}></Route>
           <Route path='/about' element={ <About/>}></Route>
+          <Route path='/policy-privacy' element={ <Privacy/>}></Route>
         </Routes>
       </div>
     </div>
